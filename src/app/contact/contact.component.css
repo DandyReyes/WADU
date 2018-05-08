@@ -1,0 +1,15 @@
+body{  
+  font-family: sans-serif;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    margin: 20px auto;
+  }
+  #contactTitle{
+    line-height: 2.4;
+  }
+  body{
+    background-color: skyblue;
+    background-size: cover;
+    height: 100vw;
+  }
