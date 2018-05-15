@@ -1,9 +1,16 @@
 
-<div>
-    <h1 id = "wadu">WADU</h1>
-    <input [(ngModel)] = "Submit" type = "text" name = "textbox" size = "40" id = "text">
-    <button>Submit</button>
+<div id = "Visa">
+    <h1 id = "wadu" >WADU</h1>
+    <button name = "btn" (click) = "onClick()">Submit</button>
+    <input [(ngModel)] = "submits" type = "text" name = "textbox" size = "40" id = "text">
+    
+        <!-- HTML -->
+        <div class="myBox">
+            {{Submit}}
+        </div>
+    
 
-    <br><br><h2> {{Submit}} </h2>
-    {{ itemCount }}
+
+    <h1>{{counter}}</h1>
+    <button id = "buttonRight"><a routerLink="/Results">Click to Finish</a></button>
 </div>

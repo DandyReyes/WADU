@@ -3,13 +3,14 @@ body{
     color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
-    margin: 20px auto;
+    margin: auto;
   }
   #contactTitle{
-    line-height: 2.4;
+    line-height: 4;
   }
   body{
-    background-color: skyblue;
+    background: url(https://cdn-media-2.lifehack.org/wp-content/files/2013/07/shutterstock_108867218-1.jpg);
     background-size: cover;
-    height: 100vw;
+    height: 100vh;
+    width: 100vw;
   }

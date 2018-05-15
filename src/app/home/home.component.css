@@ -1,4 +1,4 @@
-div{
+#Visa {
     color: white;
     padding: 0px;
     background: url(https://www.hdwallpapers.in/walls/creative_black_bird_hd-wide.jpg);
@@ -22,3 +22,40 @@ div{
     -webkit-text-fill-color: transparent;
     
 }
+#buttonRight{
+    position: fixed;
+    margin-top: 100px;
+    margin-left: 430px;
+}
+    
+    /* Box styles */
+    .myBox {
+    border: none;
+    padding: 5px;
+    font: 24px/36px sans-serif;
+    width: 400px;
+    height: 200px;
+    overflow: scroll;
+    margin: auto;
+    }
+    
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    width: 2px;
+    border: 1px dotted pink;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+    background: pink; 
+    border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+    background: hotpink;  
+    }

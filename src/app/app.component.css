@@ -7,7 +7,7 @@ ul {
     padding: 0;
     padding-bottom: -50px;
     overflow: hidden;
-    background-image: linear-gradient(to bottom, #ffffff, #b9b9b9, #777777, #3b3b3b, #000000);;
+    background: linear-gradient(to bottom, #ffffff, #b9b9b9, #777777, #3b3b3b, #000000); opacity: 0.5; filter: alpha(opacity=50);
     border-bottom: 2px solid black;
     width: 100vw;
     height: 50px;
@@ -20,7 +20,7 @@ li {
 
 li a {
     
-    color: #4F4F4F;
+    color: white;
     text-align: center;
     
     padding: 5px 16px;
@@ -57,4 +57,12 @@ li a {
         25%  {background-color: turquoise;}
         50%  {background-color: navy;}
         100% {background-color: black;}
+    }
+
+   .footer {
+        position: relative;
+        width: 100vw;
+        background: linear-gradient(grey, lightgrey );
+        color: white;
+        text-align: left;
     }

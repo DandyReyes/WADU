@@ -7,11 +7,18 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  itemCount: Number = 4;
-
+  public counter = 0;
+  public userInput = true;
+  public submits;
+  public submit = [];
   constructor() { }
 
   ngOnInit() {
   }
-
+  onClick() {
+    // if (this.userInput) {
+    this.counter++;
+    // }
+    
+  }
 }
