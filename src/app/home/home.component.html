@@ -1,16 +1,19 @@
-
-<div id = "Visa">
-    <h1 id = "wadu" >WADU</h1>
-    <button name = "btn" (click) = "onClick()">Submit</button>
-    <input [(ngModel)] = "submits" type = "text" name = "textbox" size = "40" id = "text">
-    
+<form #infoHolderForm="ngForm" (ngSubmit)="onClick()" name = "Form">
+    <div id="Visa">
+        <h1 id="wadu">WADU</h1>
+        <button name="btn" value = "Submit">Submit</button>
+        <div class="popup">
+            <input (mouseenter) = "myFunction()" [(ngModel)]="userInput.data" type="text" 
+            name="userInput" size="40" id="text" required = "" [disabled]="returnTrue()">
+            <span class="popuptext" id="myPopup" name = "span" >You have {{ countDown }} inputs left</span>
+          </div>
+          
         <!-- HTML -->
         <div class="myBox">
-            {{Submit}}
+            <p *ngFor = "let user of userData">{{user.data}}</p>
         </div>
-    
-
-
-    <h1>{{counter}}</h1>
-    <button id = "buttonRight"><a routerLink="/Results">Click to Finish</a></button>
-</div>
+        <button id="buttonRight" [hidden] = "!returnTrue()">
+            <a routerLink="/Results">Click to Finish</a>
+        </button>
+    </div>
+</form>

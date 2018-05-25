@@ -1,3 +1,18 @@
-<p>
-  results works!
-</p>
+<div id = "resultsPage">
+  <div class = "pseudoResult">
+    <img src="https://hiring-assets.careerbuilder.com/media/attachments/careerbuilder-original-2442.jpg?1469042215" alt="">
+  </div>
+  <div class = "pseudoResult"></div>
+  <div class = "pseudoResult"></div>
+  <div class = "pseudoResult"></div>
+  
+  <p>
+    This is what I'm all about. <a href="" (click)="sendMeHome()"><strong>Take me back</strong></a>.
+  </p>
+  
+  <ul>
+    <li *ngFor="let goal of goals">
+      {{ goal }}
+    </li>
+  </ul>
+</div>

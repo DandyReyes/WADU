@@ -24,6 +24,15 @@ const routes: Routes = [
     path: 'Results',
     component: ResultsComponent
   },
+  {
+    path: '',
+    redirectTo: 'Home',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: 'Home',
+  }
 ];
 
 @NgModule({

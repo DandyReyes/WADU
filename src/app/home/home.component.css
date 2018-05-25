@@ -1,7 +1,7 @@
 #Visa {
     color: white;
     padding: 0px;
-    background: url(https://www.hdwallpapers.in/walls/creative_black_bird_hd-wide.jpg);
+    background: url(https://teamexpansion.org/wordpress/wp-content/uploads/2017/09/question-mark-1872634_1920.jpg);
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -33,7 +33,7 @@
     border: none;
     padding: 5px;
     font: 24px/36px sans-serif;
-    width: 400px;
+    width: 396px;
     height: 200px;
     overflow: scroll;
     margin: auto;
@@ -41,14 +41,14 @@
     
     /* Scrollbar styles */
     ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+    width: 2px;
+    height: 2px;
     }
     
     ::-webkit-scrollbar-track {
     border-radius: 10px;
     width: 2px;
-    border: 1px dotted pink;
+    border: 0px dotted pink;
     }
     
     ::-webkit-scrollbar-thumb {
@@ -58,4 +58,61 @@
     
     ::-webkit-scrollbar-thumb:hover {
     background: hotpink;  
+    }
+
+    /*This is for pop-up message*/
+    .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* The actual popup */
+    .popup .popuptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: right;
+        border-radius: 6px;
+        padding: 8px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+    }
+    
+    /* Popup arrow */
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+    
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
+    
+    /* Add animation (fade in the popup) */
+    @-webkit-keyframes fadeIn {
+        from {opacity: 0;} 
+        to {opacity: 1;}
+    }
+    
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
     }
