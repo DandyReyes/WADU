@@ -1,19 +1,103 @@
-<form #infoHolderForm="ngForm" (ngSubmit)="onClick()" name = "Form">
+<form #infoHolderForm="ngForm" (ngSubmit)="onClick()" name="Form">
     <div id="Visa">
         <h1 id="wadu">WADU</h1>
-        <button name="btn" value = "Submit">Submit</button>
-        <div class="popup">
-            <input (mouseenter) = "myFunction()" [(ngModel)]="userInput.data" type="text" 
-            name="userInput" size="40" id="text" required = "" [disabled]="returnTrue()">
-            <span class="popuptext" id="myPopup" name = "span" >You have {{ countDown }} inputs left</span>
-          </div>
-          
-        <!-- HTML -->
-        <div class="myBox">
-            <p *ngFor = "let user of userData">{{user.data}}</p>
+        <br>
+
+        <ng-template id="myModal" #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                <h4 class="modal-title modaltitle">How does it work?</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modalText">
+                <p>Welcome to WADU! WADU specializes in finding you the job you love. Press the two downward arrows and choose
+                    from the selection of hobbies. You will need to choose at least three hobbies then press continue to
+                    get a career option! Let's start.&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+            </div>
+        </ng-template>
+        <hr>
+
+
+
+        <div class="container picHold">
+            <div class="row collapse demo">
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="https://www.yourfreecareertest.com/wp-content/uploads/2017/05/baker.jpg"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="https://image.redbull.com/rbcom/010/2016-02-16/1331777047411_1/0010/1/1600/1067/1/a-pair-of-mountain-bikers-riding-in-the-dolomites-range-in-noertheastern-italy.jpg"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="https://img00.deviantart.net/c71f/i/2013/069/9/9/the_royal_theater_carre_ring_by_framafoto-d5xk9zk.jpg"
+                            alt="">
+                    </a>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row collapse demo">
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="https://www.brettullman.com/wp-content/uploads/2015/10/bigstock-young-black-woman-listen-music-12162356.jpg"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="https://blog.gesrepair.com/wp-content/uploads/2017/10/bigstock-Miniature-Engineers-Fixing-Err-26417516.jpg"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="http://dreamsinheels.com/wp-content/uploads/2016/03/writing.jpg"
+                            alt="">
+                    </a>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row collapse demo">
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="https://i.ytimg.com/vi/Cf_dyJVftrI/maxresdefault.jpg"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="https://om4.com.au/wp-content/uploads/photographer-website-design-91250317.jpg"
+                            alt="">
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a (click)="clickPic()">
+                        <img width="300px" class="rounded img-thumbnail" src="https://s1.favim.com/orig/13/art-artist-draw-girl-Favim.com-180132.jpg"
+                            alt="">
+                    </a>
+                </div>
+                <button id="buttonRight">
+                    <a routerLink="/Results">Click to Finish</a>
+                </button>
+                <br>
+                <br>
+                <br>
+            </div>
+            <br>
+            <i class="fas fa-angle-double-down" data-toggle="collapse" data-target=".demo"></i>
         </div>
-        <button id="buttonRight" [hidden] = "!returnTrue()">
-            <a routerLink="/Results">Click to Finish</a>
-        </button>
     </div>
 </form>

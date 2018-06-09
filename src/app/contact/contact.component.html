@@ -1,33 +1,29 @@
 <body>
-    <form #userContactForm = "ngForm" (ngSubmit) = "contactInfo()">
-        <h1 id="contactTitle">Contact me:</h1>
-        <br>
-        <br>
-        <h2>Please enter full name</h2>
-        <textarea name = "fullName" [(ngModel)] = "contact.fullName" required = ""></textarea>
-        <br>
-        <h2>Enter email address</h2>
-        <textarea name = "email" [(ngModel)] = "contact.email" required = ""></textarea>
-        <br>
-        <h2>Enter phone number</h2>
-        <textarea name = "phoneNumber" [(ngModel)] = "contact.phoneNumber" required = ""></textarea>
-        <br>
-        <h2>Comments?</h2>
-        <textarea name = "comments" cols="50" rows="5" [(ngModel)] = "contact.comments" required = "">Enter text here...</textarea>
-        <br>
-        <button name = "btn" value = "submit">submit</button>
+    <form #userContactForm = "ngForm" (ngSubmit) = "contactInfo()"><br><br>
+        <br><br><br><div class = "container cont rounded img-thumbnail"><br>
+                <h1 id="contactTitle">Contact Me:</h1>
+            <div class = "row">
+                <div class = "col-6">
+                        <h2 id = "nameTitle">Please enter full name</h2>
+                        <h2 id = "emailTitle">Enter email address</h2>
+                        <h2 id = "phoneTitle">Enter phone number</h2>
+                        <h2 id = "commentTitle">Comments?</h2>
+                </div>
+                <div class = "col-6" id = "textBoxCont">
+                    <textarea class = "resizeTxt rounded" name = "fullName" [(ngModel)] = "contact.fullName" required = ""></textarea>
+                    <br><br>
+
+                    <textarea class = "resizeTxt rounded" name = "email" [(ngModel)] = "contact.email" required = ""></textarea>
+                    <br><br>
+                    <textarea class = "resizeTxt rounded" name = "phoneNumber" [(ngModel)] = "contact.phoneNumber" required = ""></textarea>
+                    <br><br>
+                    <textarea id = "comments" class = "rounded"name = "comments" cols= "50" rows="5" [(ngModel)] = "contact.comments" required = "">Enter text here...</textarea>
+                    <br><br>
+                    <button id = "button" name = "btn" value = "submit">Submit</button><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
     </form>
     <br>
     <br>
-
-    <a href="">
-        <img width="50px" src="http://www.makestuff.in/tutorial/sharebutton/image/6.png">
-    </a>
-    <a href="https://www.facebook.com/dandy.reyes.12">
-        <img width="50px" src="https://media4.s-nbcnews.com/j/streams/2013/december/131203/2d9840012-facebooklogo.nbcnews-ux-1024-900.jpg"
-            alt="">
-    </a>
-    <a href="https://github.com/Sincote">
-        <img width="50px" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" alt="">
-    </a>
 </body>

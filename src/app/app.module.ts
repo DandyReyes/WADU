@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -11,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { ResultsComponent } from './results/results.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { DataService } from './data.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

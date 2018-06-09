@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../data.service';
+import * as $ from 'jquery';
+import { NgbModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [DataService]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   // Counting variable used for
   public counter = 0;
   public userData = [];
@@ -17,18 +18,48 @@ export class HomeComponent implements OnInit {
   };
   public countDown = 5;
   public hoverIndex;
+
+  // variables for data service
   public goals = [];
-  //
   public goalText;
-  public _data;
   public itemCount;
 
-  constructor(private_data: DataService) { }
+  public clickPict = 0;
+
+
+  constructor(private _data: DataService, private modalService: NgbModal) { }
+  @ViewChild('content') content;
+  closeResult: string;
   ngOnInit() {
+    // For Data service
     this.itemCount = this.goals.length;
     this._data.goal.subscribe(res => this.goals = res);
     this._data.changeGoal(this.goals);
-    this.itemCount = this.goals.length;
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+  this.open();
+  });
+  }
+
+  open() {
+    // For modal
+    this.modalService.open(this.content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+
+  }
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
   addItem() {
     this.goals.push(this.goalText);
@@ -58,21 +89,21 @@ export class HomeComponent implements OnInit {
     };
   }
   // This function shows the pop-up menu
-  myFunction() {
-    const popup = document.getElementById('myPopup');
-    popup.classList.toggle('show');
-  }
   mouseLeave() {
     return false;
   }
   // This function disables the input area
   returnTrue() {
-   if (this.counter === 5) {
-     return true;
-   } else {
-     return false;
-   }
+    if (this.counter === 5) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  clickPic() {
+    this.clickPict++;
+    if (this.clickPict) {
+      console.log(this.clickPict);
+    }
   }
 }
-
-
