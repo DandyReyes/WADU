@@ -65,3 +65,12 @@ i {
 .modalTitle {
     font-family: serif;
 }
+.button {
+    background-color: transparent;
+    border-color: transparent;
+    width: 350px;
+}
+
+#arrowDU {
+    width: 30px;
+}

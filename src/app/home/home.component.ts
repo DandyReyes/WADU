@@ -24,8 +24,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public goalText;
   public itemCount;
 
+  public hobby = [];
   public clickPict = 0;
+  public disabled = false;
 
+  public changeImage = 'f';
 
   constructor(private _data: DataService, private modalService: NgbModal) { }
   @ViewChild('content') content;
@@ -39,8 +42,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-  this.open();
-  });
+      this.open();
+    });
   }
 
   open() {
@@ -58,7 +61,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return  `with: ${reason}`;
+      return `with: ${reason}`;
     }
   }
   addItem() {
@@ -76,22 +79,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // Trims extra spaces
     this.userInput.data = this.userInput.data.trim();
     this.userData.push(this.userInput);
-    // Input validation for empty inputs
-    if (this.userInput.data === '') {
-      console.log('You did not put anything bro');
-    } else {
-      this.counter++;
-      this.countDown -= 1;
-    }
     // Reset input data
     this.userInput = {
       data: '',
     };
   }
-  // This function shows the pop-up menu
-  mouseLeave() {
-    return false;
-  }
+
   // This function disables the input area
   returnTrue() {
     if (this.counter === 5) {
@@ -100,10 +93,123 @@ export class HomeComponent implements OnInit, AfterViewInit {
       return false;
     }
   }
-  clickPic() {
-    this.clickPict++;
-    if (this.clickPict) {
+
+  // This is to refresh the array, incrementor
+  // when it is clicked, and the color of the images
+  refreshAll() {
+    this.hobby = [];
+    this.clickPict = 0;
+
+    const bake = document.getElementById('baking') as HTMLImageElement;
+    bake.src = '../../assets/baking_color_text.jpg';
+
+    const bike = document.getElementById('biking') as HTMLImageElement;
+    bike.src = '../../assets/biking_color_text.jpg';
+
+    const theatre = document.getElementById('theatre') as HTMLImageElement;
+    theatre.src = '../../assets/theatre_color_text.jpg';
+
+    const music = document.getElementById('music') as HTMLImageElement;
+    music.src = '../../assets/music_color_text.jpg';
+
+    const creating = document.getElementById('creating') as HTMLImageElement;
+    creating.src = '../../assets/creating_color_text.jpg';
+
+    const writing = document.getElementById('writing') as HTMLImageElement;
+    writing.src = '../../assets/writing_color_text.jpg';
+
+    const drawing = document.getElementById('drawing') as HTMLImageElement;
+    drawing.src = '../../assets/drawing_color_text.jpg';
+
+    const photography = document.getElementById('photography') as HTMLImageElement;
+    photography.src = '../../assets/photography_color_text.jpg';
+
+    const socializing = document.getElementById('socializing') as HTMLImageElement;
+    socializing.src = '../../assets/socializing_color_text.jpg';
+  }
+
+  // I used this for input validation
+  // of only clicking three images
+  clickPic(topic) {
+    if (this.clickPict <= 2) {
+      this.clickPict++;
       console.log(this.clickPict);
+      console.log(topic);
+      this.hobby.push(topic);
+      console.log(this.hobby);
+    }
+  }
+  returnBool() {
+    if (this.clickPict >= 3) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  returnHidden() {
+    if (this.clickPict >= 3) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  // I used this to change the image of my picture
+  // The only thing I was missing was the "as HTMLImageElement"
+  changeBake() {
+    const bake = document.getElementById('baking') as HTMLImageElement;
+    bake.src = '../../assets/baking_gray_text.jpg';
+  }
+
+  changeBiking() {
+    const bike = document.getElementById('biking') as HTMLImageElement;
+    bike.src = '../../assets/biking_gray_text.jpg';
+  }
+
+  changeTheatre() {
+    const theatre = document.getElementById('theatre') as HTMLImageElement;
+    theatre.src = '../../assets/theatre_gray_text.jpg';
+  }
+
+  changeMusic() {
+    const music = document.getElementById('music') as HTMLImageElement;
+    music.src = '../../assets/music_gray_text.jpg';
+  }
+
+  changeCreating() {
+    const creating = document.getElementById('creating') as HTMLImageElement;
+    creating.src = '../../assets/creating_gray_text.jpg';
+  }
+
+  changeWriting() {
+    const writing = document.getElementById('writing') as HTMLImageElement;
+    writing.src = '../../assets/writing_gray_text.jpg';
+  }
+
+  changeDrawing() {
+    const drawing = document.getElementById('drawing') as HTMLImageElement;
+    drawing.src = '../../assets/drawing_gray_text.jpg';
+  }
+
+  changePhotography() {
+    const photography = document.getElementById('photography') as HTMLImageElement;
+    photography.src = '../../assets/photography_gray_text.jpg';
+  }
+
+  changeSocializing() {
+    const socializing = document.getElementById('socializing') as HTMLImageElement;
+    socializing.src = '../../assets/socializing_gray_.jpg';
+  }
+
+  changeIcon() {
+    const arrow = document.getElementById('arrowDU') as HTMLImageElement;
+    if (this.changeImage === 'f') {
+    arrow.src = '../../assets/up-chevron-button.png';
+    this.changeImage = 't';
+    } else if (this.changeImage === 't') {
+    arrow.src = '../../assets/chevron-sign-down.png';
+    this.changeImage = 'f';
     }
   }
 }

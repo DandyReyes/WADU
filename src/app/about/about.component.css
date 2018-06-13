@@ -32,7 +32,8 @@ height: 400px;
     font-family: serif;
     line-height: 3;
     padding-top: 6px;
+    font-size: 20px;
 }
-#myPic{
-    margin-left: 85px;
+#lineUnderPhoto{
+    background-color: black;
 }
