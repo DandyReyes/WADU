@@ -74,3 +74,19 @@ i {
 #arrowDU {
     width: 30px;
 }
+
+.btn {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    height: 50px;
+}
+#buttonLeft {
+    height: 50px;
+    width: 100px;
+    margin-left: 23px;
+}
+#buttonRight {
+    bottom: 100px;
+    right: 24px;
+}

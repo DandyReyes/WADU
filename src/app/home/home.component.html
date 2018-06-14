@@ -11,9 +11,9 @@
                 </button>
             </div>
             <div class="modal-body modalText">
-                <p>Welcome to WADU! WADU specializes in finding you the job you love. Press the downward arrow and choose
-                    from the selection of hobbies. You will need to choose at least three hobbies then press continue to
-                    get a career option! Let's start&hellip;</p>
+                <p>Welcome to WADU! WADU specializes in finding you the job you love. Press the downward arrow and choose from
+                    the selection of hobbies. You will need to choose at least three hobbies then press continue to get a
+                    career option! Let's start&hellip;</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
@@ -26,21 +26,18 @@
         <div class="container picHold">
             <div class="row collapse demo">
                 <div class="col-4">
-                    <button class="button rounded" (click)="clickPic('baker')" (click) = "changeBake()" [disabled] = "returnBool()">
-                        <img id = "baking" class="rounded img-thumbnail" src="../../assets/baking_color_text.jpg"
-                            alt="">
+                    <button class="button rounded" (click)="clickPic('baker')" (click)="changeBake()" [disabled]="returnBool()">
+                        <img id="baking" class="rounded img-thumbnail" src="../../assets/baking_color_text.jpg" alt="">
                     </button>
                 </div>
                 <div class="col-4">
-                    <button class="button rounded" (click)="clickPic('biking')" (click) = "changeBiking()" [disabled] = "returnBool()">
-                        <img id = "biking" class="rounded img-thumbnail" src="../../assets/biking_color_text.jpg"
-                            alt="">
+                    <button class="button rounded" (click)="clickPic('biking')" (click)="changeBiking()" [disabled]="returnBool()">
+                        <img id="biking" class="rounded img-thumbnail" src="../../assets/biking_color_text.jpg" alt="">
                     </button>
                 </div>
                 <div class="col-4">
-                    <button class = "button rounded" (click)="clickPic('theatre')" (click) = "changeTheatre()" [disabled] = "returnBool()">
-                        <img id = "theatre" class="rounded img-thumbnail" src="../../assets/theatre_color_text.jpg"
-                            alt="">
+                    <button class="button rounded" (click)="clickPic('theatre')" (click)="changeTheatre()" [disabled]="returnBool()">
+                        <img id="theatre" class="rounded img-thumbnail" src="../../assets/theatre_color_text.jpg" alt="">
                     </button>
                 </div>
             </div>
@@ -49,20 +46,18 @@
 
             <div class="row collapse demo">
                 <div class="col-4">
-                    <button class = "button rounded" (click)="clickPic('music')" (click) = "changeMusic()" [disabled] = "returnBool()">
-                        <img id = "music" class="rounded img-thumbnail" src="../../assets/music_color_text.jpg"
-                            alt="">
+                    <button class="button rounded" (click)="clickPic('music')" (click)="changeMusic()" [disabled]="returnBool()">
+                        <img id="music" class="rounded img-thumbnail" src="../../assets/music_color_text.jpg" alt="">
                     </button>
                 </div>
                 <div class="col-4">
-                    <button class = "button rounded" (click)="clickPic('creating')" (click) = "changeCreating()" [disabled] = "returnBool()">
-                        <img id = "creating" class="rounded img-thumbnail" src="../../assets/creating_color_text.jpg"
-                            alt="">
+                    <button class="button rounded" (click)="clickPic('creating')" (click)="changeCreating()" [disabled]="returnBool()">
+                        <img id="creating" class="rounded img-thumbnail" src="../../assets/creating_color_text.jpg" alt="">
                     </button>
                 </div>
                 <div class="col-4">
-                    <button class = "button rounded" (click)="clickPic('writing')" (click) = "changeWriting()" [disabled] = "returnBool()">
-                        <img id = "writing" class="rounded img-thumbnail" src="../../assets/writing_color_text.jpg" alt="">
+                    <button class="button rounded" (click)="clickPic('writing')" (click)="changeWriting()" [disabled]="returnBool()">
+                        <img id="writing" class="rounded img-thumbnail" src="../../assets/writing_color_text.jpg" alt="">
                     </button>
                 </div>
             </div>
@@ -71,32 +66,33 @@
 
             <div class="row collapse demo">
                 <div class="col-4">
-                    <button class = "button rounded" (click)="clickPic('drawing')" (click) = "changeDrawing()" [disabled] = "returnBool()">
-                        <img id = "drawing" class="rounded img-thumbnail" src="../../assets/drawing_color_text.jpg" alt="">
+                    <button class="button rounded" (click)="clickPic('drawing')" (click)="changeDrawing()" [disabled]="returnBool()">
+                        <img id="drawing" class="rounded img-thumbnail" src="../../assets/drawing_color_text.jpg" alt="">
                     </button>
                 </div>
                 <div class="col-4">
-                    <button class = "button rounded" (click)="clickPic('photography')" (click) = "changePhotography()" [disabled] = "returnBool()">
-                        <img id = "photography" class="rounded img-thumbnail" src="../../assets/photography_color_text.jpg"
-                            alt="">
+                    <button class="button rounded" (click)="clickPic('photography')" (click)="changePhotography()" [disabled]="returnBool()">
+                        <img id="photography" class="rounded img-thumbnail" src="../../assets/photography_color_text.jpg" alt="">
                     </button>
                 </div>
                 <div class="col-4">
-                    <button class = "button rounded" (click)="clickPic('socializing')" (click) = "changeSocializing()" [disabled] = "returnBool()">
-                        <img width="350px" id = "socializing" class="rounded img-thumbnail" src="../../assets/socializing_color_text.jpg"
-                            alt="">
+                    <button class="button rounded" (click)="clickPic('socializing')" (click)="changeSocializing()" [disabled]="returnBool()">
+                        <img width="350px" id="socializing" class="rounded img-thumbnail" src="../../assets/socializing_color_text.jpg" alt="">
                     </button>
                 </div>
-                <button class = "rounded" id="buttonRight">
-                    <a routerLink="/Results" [hidden] = "returnHidden()">Click to Finish</a>
+                <button class="rounded btn" id="buttonRight" routerLink="/Results" [hidden]="returnHidden()">
+                    <b>CLICK TO FINISH</b>
                 </button>
-                <button (click) = "refreshAll()"class = "rounded">Refresh</button>
+                <button (click)="refreshAll()" class="rounded btn" id = "buttonLeft"><b>REFRESH</b></button>
                 <br>
                 <br>
                 <br>
             </div>
+            <img src="../../assets/chevron-sign-down.png" id="arrowDU" (click)="changeIcon()" data-toggle="collapse" data-target=".demo"
+                alt="">
             <br>
-            <img src="../../assets/chevron-sign-down.png" id = "arrowDU" (click) = "changeIcon()" data-toggle="collapse" data-target=".demo" alt="">
+            <br>
+            <br>
         </div>
     </div>
 </form>

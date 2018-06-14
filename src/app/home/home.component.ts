@@ -19,20 +19,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public countDown = 5;
   public hoverIndex;
 
-  // variables for data service
+  /******* variables for data service ********/
   public goals = [];
   public goalText;
   public itemCount;
+  /******************************************/
 
-  public hobby = [];
-  public clickPict = 0;
-  public disabled = false;
+  public hobby = [];      // Used to store the hobbies on the homepage
+  public clickPict = 0;   // Incrementor for input validation
 
+  // Boolean for changing the image of the arrows
   public changeImage = 'f';
 
   constructor(private _data: DataService, private modalService: NgbModal) { }
   @ViewChild('content') content;
   closeResult: string;
+
   ngOnInit() {
     // For Data service
     this.itemCount = this.goals.length;
@@ -40,12 +42,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this._data.changeGoal(this.goals);
   }
 
+  // Also used for data service
   ngAfterViewInit() {
     setTimeout(() => {
       this.open();
     });
   }
 
+  // For the Modal
   open() {
     // For modal
     this.modalService.open(this.content).result.then((result) => {
@@ -55,6 +59,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
 
   }
+
+  /******************Start data service code*************************/
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -70,11 +76,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.itemCount = this.goals.length;
     this._data.changeGoal(this.goals);
   }
-
   removeItem(i) {
     this.goals.splice(i, 1);
     this._data.changeGoal(this.goals);
   }
+  /*******************End data service code*************************/
+
+  // Used to pass information into array
   onClick() {
     // Trims extra spaces
     this.userInput.data = this.userInput.data.trim();
@@ -139,6 +147,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log(this.hobby);
     }
   }
+
+  // Used for returning a true or false value to disable
+  // every picture on the homepage after pressing three pictures
   returnBool() {
     if (this.clickPict >= 3) {
       return true;
@@ -147,6 +158,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // Used to show results button when three images are clicked
   returnHidden() {
     if (this.clickPict >= 3) {
       return false;
