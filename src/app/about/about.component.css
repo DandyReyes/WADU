@@ -8,8 +8,10 @@
     line-height: 2.4;
 }
 #topImage{
-background:url(https://teamexpansion.org/wordpress/wp-content/uploads/2017/09/question-mark-1872634_1920.jpg);
-background-size: cover;
+    background:url(https://teamexpansion.org/wordpress/wp-content/uploads/2017/09/question-mark-1872634_1920.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 width: 100vw;
 height: 400px;
 }

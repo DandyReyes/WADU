@@ -90,3 +90,7 @@ i {
     bottom: 100px;
     right: 24px;
 }
+.btn1{
+    background-color: transparent;
+    color: black;
+}
