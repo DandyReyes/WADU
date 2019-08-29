@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../data.service';
-import * as $ from 'jquery';
 import { NgbModule, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
